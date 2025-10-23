@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — Web Quản lý</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <div class="logo">WQ</div>
+        <div>
+          <h1>Trang quản trị</h1>
+          <div class="small">Quản lý Người dùng và Sản phẩm</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div id="userInfo" class="small"></div>
+        <button id="logout" class="btn secondary">Đăng xuất</button>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div>
+        <div class="card">
+          <div class="card-title"><strong>Quản lý Người dùng</strong></div>
+          <form id="userForm">
+            <input type="hidden" id="uid" />
+            <div class="form-row"><input id="uname" class="input" placeholder="Họ tên" required /></div>
+            <div class="form-row"><input id="uemail" class="input" type="email" placeholder="Email" required /></div>
+            <div class="form-row">
+              <select id="urole" class="input">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
+              <button id="addUser" class="btn">Thêm</button>
+              <button id="cancelUser" class="btn secondary" type="button" style="display:none">Hủy</button>
+            </div>
+          </form>
+
+          <table class="table" id="usersTable">
+            <thead><tr><th>#</th><th>Họ tên</th><th>Email</th><th>Vai trò</th><th>Hành động</th></tr></thead>
+            <tbody id="usersTbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <div class="card-title"><strong>Quản lý Sản phẩm</strong></div>
+          <form id="prodForm">
+            <input type="hidden" id="pid" />
+            <div class="form-row"><input id="pname" class="input" placeholder="Tên sản phẩm" required /></div>
+            <div class="form-row"><input id="pprice" class="input" type="number" placeholder="Giá" required /></div>
+            <div class="form-row"><input id="pdesc" class="input" placeholder="Mô tả" /></div>
+            <div class="form-row"><input id="pimg" class="input" placeholder="Đường dẫn ảnh (images/...)" /></div>
+            <div class="form-row">
+              <button id="addProd" class="btn">Thêm</button>
+              <button id="cancelProd" class="btn secondary" type="button" style="display:none">Hủy</button>
+            </div>
+          </form>
+
+          <table class="table" id="prodTable">
+            <thead><tr><th>#</th><th>Tên</th><th>Giá</th><th>Mô tả</th><th>Hành động</th></tr></thead>
+            <tbody id="prodTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer">Dữ liệu lưu trong localStorage — upload folder lên GitHub để nộp.</p>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

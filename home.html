@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home — Web Quản lý</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <div class="logo">WQ</div>
+        <div>
+          <h1>Trang chủ — Cửa hàng</h1>
+          <div class="small">Xem sản phẩm và quản lý giỏ hàng</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div id="userInfo" class="small"></div>
+        <button id="logout" class="btn secondary">Đăng xuất</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <strong>Sản phẩm</strong>
+        <div class="search">
+          <input id="q" class="input" placeholder="Tìm sản phẩm..." />
+          <button id="btnSearch" class="btn secondary">Tìm</button>
+        </div>
+      </div>
+
+      <div id="products" class="grid grid-3"></div>
+    </div>
+
+    <div class="cart" id="cartBox" style="display:none">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <strong>Giỏ hàng</strong>
+          <button id="closeCart" class="btn secondary">Đóng</button>
+        </div>
+        <div class="cart-list" id="cartList"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div class="small">Tổng:</div>
+          <div id="cartTotal" class="price">0</div>
+        </div>
+        <div style="margin-top:10px;display:flex;gap:8px">
+          <button id="checkout" class="btn">Thanh toán</button>
+          <button id="clearCart" class="btn secondary">Xóa</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer">Giao diện demo để nộp lên GitHub.</p>
+  </div>
+
+  <script src="js/home.js"></script>
+</body>
+</html>
